@@ -1,0 +1,9 @@
+[submodule "projects/malacarne_francesco"]
+	path = projects/malacarne_francesco
+	url = https://github.com/Francy-09/lenotedellapassione.github.io.git
+[submodule "projects/HTML games/cookie"]
+	path = projects/HTML games/cookie
+	url = https://github.com/Francy-09/cookieclicker.git
+[submodule "projects/HTML games/extoria"]
+	path = projects/HTML games/extoria
+	url = https://github.com/Francy-09/ExToria.git
