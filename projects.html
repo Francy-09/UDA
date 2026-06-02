@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="whoAmI.html">Chi sono</a>
+  <a class="active" href="projects.html">Progetti</a>
+  <a href="contacts.html">Contatti</a>
+</nav>
+
+<div class="section">
+
+  <div class="card">
+    <h2>DLG smart city - capolavoro su UNICA</h2>
+    <p>Un progetto basato sulle tecnologie IoT</p>
+    <a class="project-btn" href="projects/project1.html">Apri progetto</a>
+  </div>
+
+  <div class="card">
+    <h2>Le note della passione</h2>
+    <p>Il mio primo sito web, ora sostituito da questo!</p>
+    <a class="project-btn" href="projects/project2.html">visita ex. sito</a>
+  </div>
+
+  <div class="card">
+    <h2>HTML Games</h2>
+    <p>Un insieme di giochi realizzati con HTML, CSS e ( pochissimo ) JavaScript.</p>
+    <a class="project-btn" href="projects/project3.html">è ora di divertirsi!</a>
+  </div>
+
+</div>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('show');
+    });
+  }, { threshold: 0.2 });
+  cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>

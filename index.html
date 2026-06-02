@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a class="active" href="index.html">Home</a>
+  <a href="whoAmI.html">Chi sono</a>
+  <a href="projects.html">Progetti</a>
+  <a href="contacts.html">Contatti</a>
+</nav>
+
+<div class="cookie-popup-overlay" id="cookiePopup">
+  <div class="cookie-popup">
+    <div class="cookie-popup-header">
+      WANT COOKIES ?
+    </div>
+    <div class="cookie-popup-body">
+      <a class="cookie-link-button" href="projects/HTML games/cookie/index.html" title="Apri il gioco dei cookie">
+        <img src="projects/HTML games/cookie/cookie.png" alt="Cookie" />
+      </a>
+      <div class="cookie-popup-actions">
+        <button class="cookie-btn accept" id="cookieAccept">ACCEPT</button>
+        <button class="cookie-btn reject" id="cookieReject">REJECT</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <h2>Benvenuto</h2>
+    <p>Questo è il mio sito personale.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <h6>Non so piu che scrivere nella pagina principale</h6>
+    <p>clicca qualche link sopra? almeno mi date le visualizzazioni su altervista! !!!</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <h2>niente da fare?</h2>
+    <h2>ti stai annoiando?</h2>
+    <h6>perchè non resetti la pagina e smashi quel biscottone gustoso ? è solo un evil cookie, non si replicherà nel tuo pc.</h6>
+  </div>
+</div>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('show');
+    });
+  }, { threshold: 0.2 });
+  cards.forEach(card => observer.observe(card));
+
+  const popup = document.getElementById('cookiePopup');
+  document.getElementById('cookieAccept').addEventListener('click', () => popup.classList.add('hidden'));
+  document.getElementById('cookieReject').addEventListener('click', () => popup.classList.add('hidden'));
+</script>
+
+</body>
+</html>

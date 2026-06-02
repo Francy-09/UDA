@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="whoAmI.html">Chi sono</a>
+  <a href="projects.html">Progetti</a>
+  <a class="active" href="contacts.html">Contatti</a>
+</nav>
+
+<div class="section">
+  <div class="card">
+    <h2>Contatti</h2>
+    <p>Email: 71319401@itiscastelli.onmicrosoft.com</p>
+    <p>Instagram: @falsoInstagram123</p>
+    <p>tiktok: @falsoTokTik321</p>
+  </div>
+</div>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('show');
+    });
+  }, { threshold: 0.2 });
+  cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>

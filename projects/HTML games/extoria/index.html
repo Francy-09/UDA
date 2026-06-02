@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExToria</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="back" href="../index.html">← Torna a HTML Games</a>
+
+  <h1 class="title">ExToria</h1>
+  <p class="subtitle">Storie oscure. Misteri irrisolti. Percorsi nascosti.</p>
+
+  <div class="chapter-list">
+    <button class="chapter" onclick="openPopup('roam0120/pages/01_index.html', 'Capitolo 1 — Roam 0120')">
+      Capitolo 1 — Roam 0120
+    </button>
+
+    <button class="chapter" onclick="openPopup('abandoned fabbric/pages/01_index.html', 'Capitolo 2 — Ab - Fa')">
+      Capitolo 2 — Ab - Fa
+    </button>
+
+  </div>
+
+  <!-- POPUP GATEWAY -->
+  <div id="popup" class="popup hidden">
+    <div class="popup-box">
+      <h2>Inizia la ExToria</h2>
+      <p id="popup-chapter" class="chapter-name"></p>
+
+      <button id="go-btn" class="go">Vai</button>
+
+      <button class="leave" onclick="closePopup()">
+        «scappa.»
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let targetPage = "";
+
+    function openPopup(page, chapterName) {
+      targetPage = page;
+      document.getElementById("popup-chapter").textContent = chapterName;
+      document.getElementById("popup").classList.remove("hidden");
+
+      document.getElementById("go-btn").onclick = () => {
+        window.location.href = page;
+      };
+    }
+
+    function closePopup() {
+      document.getElementById("popup").classList.add("hidden");
+    }
+  </script>
+
+</body>
+</html>

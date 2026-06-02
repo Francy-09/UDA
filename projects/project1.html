@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="../index.html">Home</a>
+  <a href="../whoAmI.html">Chi sono</a>
+  <a href="../projects.html">Progetti</a>
+  <a href="../contacts.html">Contatti</a>
+</nav>
+
+<div class="section">
+  <div class="card">
+    <h2>Progetto UDA</h2>
+    <p>Un progetto basato sulle tecnologie IoT</p>
+  </div>
+</div>
+<div class="section">
+<div class="card">
+  <h2>Presentazione</h2>
+  <p>Ecco la presentazione del nostro progetto !</p>
+
+  <iframe 
+    loading="lazy"
+    style="width:100%; height:60vh; border-radius: 12px;"
+    src="https://canva.link/1rez4qaxzb9j7c8"
+    allowfullscreen="allowfullscreen">
+  </iframe>
+  <p>Canva sta dando errore, prova da qua : </p>
+  <iframe 
+    src="DLG smart city.pdf"
+    style="width:100%; height:60vh; border:none; border-radius:12px; background:#0a0f1a;">
+  </iframe>
+  <p>Se preferisci, puoi anche scaricare il PDF:</p>
+  <a class="project-btn" href="DLG smart city.pdf" download>Scarica PDF</a>
+</div>
+</div>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('show');
+    });
+  }, { threshold: 0.2 });
+  cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+/* ====== RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ====== BODY ====== */
+body {
+  background: #0a0f1a;
+  color: #d0d8ff;
+  padding-top: 80px;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+
+  background: rgba(20, 30, 50, 0.5);
+  backdrop-filter: blur(12px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  border-bottom: 1px solid rgba(120, 160, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 150, 255, 0.15);
+  
+  z-index: 9999;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #9bbcff;
+  font-size: 18px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: 0.25s;
+}
+
+.navbar a:hover {
+  background: rgba(60, 90, 150, 0.4);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(120, 160, 255, 0.6);
+}
+
+.navbar a:active {
+  transform: scale(0.92);
+  background: rgba(80, 120, 200, 0.5);
+}
+
+.navbar a.active {
+  background: rgba(120, 160, 255, 0.8);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(120, 160, 255, 0.9);
+}
+
+/* ====== SEZIONI ====== */
+.section {
+  width: 100%;
+  padding: 5px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ====== CARD FUTURISTICHE ====== */
+.card {
+  width: 80%;
+  background: rgba(15, 20, 35, 0.8);
+  border-radius: 18px;
+  padding: 30px;
+
+  border: 2px solid rgba(120, 160, 255, 0.4);
+  box-shadow: 0 0 20px rgba(120, 160, 255, 0.15);
+
+  margin-bottom: 40px;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out,
+              box-shadow 0.3s ease-out, border-color 0.3s ease-out;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 0 25px rgba(120, 160, 255, 0.25);
+  border-color: rgba(150, 190, 255, 0.7);
+}
+
+.card h2 {
+  color: #bcd4ff;
+}
+
+.card h6 {
+  color: #bcd4ff;
+}
+
+.card p {
+  color: #9fb4e6;
+  line-height: 1.5;
+}
+
+.card ul {
+  color: #9fb4e6;
+  line-height: 1.6;
+}
+
+
+.cookie-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.cookie-popup-overlay.hidden {
+  display: none;
+}
+
+.cookie-popup {
+  width: min(680px, 90vw);
+  background: rgba(10, 10, 22, 0.96);
+  border: 2px solid #ff8a1f;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(255, 80, 0, 0.25);
+}
+
+.cookie-popup-header {
+  background: linear-gradient(135deg, #e00000, #ff3d00);
+  color: #ffd48f;
+  text-align: center;
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  font-weight: 800;
+  padding: 24px 20px;
+  letter-spacing: 1px;
+}
+
+.cookie-popup-body {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr);
+  gap: 20px;
+  padding: 24px 22px 28px;
+  align-items: center;
+}
+
+.cookie-link-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: 2px solid rgba(255, 165, 0, 0.45);
+  border-radius: 24px;
+  padding: 16px;
+  min-height: 240px;
+  text-decoration: none;
+}
+
+.cookie-link-button img {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  border-radius: 20px;
+  background: rgba(255, 165, 0, 0.12);
+}
+
+.cookie-popup-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.cookie-btn {
+  width: 100%;
+  border: none;
+  border-radius: 18px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #0b41d3, #3b78ff);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 16px rgba(60, 130, 255, 0.3);
+}
+
+.cookie-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(60, 130, 255, 0.45);
+}
+
+.cookie-btn.reject {
+  background: linear-gradient(135deg, #1c4cd8, #1a2c7e);
+}
+
+@media (max-width: 740px) {
+  .cookie-popup-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+
+  background: linear-gradient(135deg, #4a6cff, #00d4ff);
+  color: white;
+
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.25s;
+
+  box-shadow: 0 0 12px rgba(0, 180, 255, 0.4);
+}
+
+.project-btn:hover {
+  background: linear-gradient(135deg, #6f8cff, #33e6ff);
+  box-shadow: 0 0 18px rgba(0, 200, 255, 0.7);
+}
+
+.project-btn:active {
+  transform: scale(0.92);
+}

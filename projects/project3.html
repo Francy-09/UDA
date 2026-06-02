@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="../index.html">Home</a>
+  <a href="../whoAmI.html">Chi sono</a>
+  <a href="../projects.html">Progetti</a>
+  <a href="../contacts.html">Contatti</a>
+</nav>
+
+<div class="section">
+  <div class="card">
+    <h2>BENVENUTI</h2>
+    <p>(non ancora)</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <h6> scendi ancora un po'... </h6>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <h2>I giochi non sono qua. sono " separati "</h2>
+    <p>entrerai in un sito diverso, altri colori, altri stili.</p>
+    <h6> direi anche altri sapori e altri rumori, ma non ho studiato abbastanza l'html per inserire suoni, e non so nulla dell' e-taste, se volete sapere chiedetelo all'Ohio State University </h6>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <h2>Pronti per l'avventura?</h2>
+    <a class="project-btn" href="HTML games\index.html" target="_blank">è ora di divertirsi!</a>
+  </div>
+</div>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('show');
+    });
+  }, { threshold: 0.2 });
+  cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>

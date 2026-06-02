@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a class="active" href="whoAmI.html">Chi sono</a>
+  <a href="projects.html">Progetti</a>
+  <a href="contacts.html">Contatti</a>
+</nav>
+
+<div class="section">
+  <div class="card">
+    <h2>Chi sono</h2>
+    <p>(magari lo sapessi)</p>
+  </div>
+</div>
+
+
+<div class="section">
+  <div class="card">
+    <h2>Malacarne Francesco</h2>
+    <p>studente dell'itis B.Castelli</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <h2>interessi</h2>
+    <p>giochi, musica (ogni tanto anche programmare?!?)</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <h2>La realtà ? </h2>
+    <ul>
+      <li>questo sito è fatto completamente a caso</li>
+      <li>non avevo voglia di farlo</li>
+      <li>l'ho fatto comunque</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <h2>Spero che vi piaccia!</h2>
+    <p>(specialmente al professor Ornetti.)</p>
+    <h6>la prego mi dia sufficienza🙏</h6>
+  </div>
+</div>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('show');
+    });
+  }, { threshold: 0.2 });
+  cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>

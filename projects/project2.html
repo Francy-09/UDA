@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="../index.html">Home</a>
+  <a href="../whoAmI.html">Chi sono</a>
+  <a href="../projects.html">Progetti</a>
+  <a href="../contacts.html">Contatti</a>
+</nav>
+
+<div class="section">
+  <div class="card">
+    <h2>Note della passione</h2>
+    <p>Il mio vecchio sito internet</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <h2>parlavo di passioni</h2>
+    <p>ma nel scriverci non ho trovato tempo da dedicarci</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <h2>ho smesso di lavorarci</h2>
+    <p>ho deciso di dedicare il mio tempo a ciò che mi piaceva, e che mi piace tuttora, la musica, invece che lavorare su questo sito.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <h2>E un sito non completo</h2>
+    <p>ma se volete visitarlo, potete cliccare qua sotto!</p>
+    <a class="project-btn" href="malacarne_francesco/musica.html" target="_blank">visita ex. sito</a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <h2>Curiosità</h2>
+    <p>sto ascoltando musica adesso.</p>
+    <h6> - non interessava a nessuno dei lettori - e a me non importa, il sito è mio e faccio ciò che voglio io. - </h6>
+  </div>
+</div>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('show');
+    });
+  }, { threshold: 0.2 });
+  cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>
