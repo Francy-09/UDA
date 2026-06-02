@@ -3,15 +3,60 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#backLink {
+  position: absolute;
+  top: 2.5vh;
+  left: 3vw;
+  font-size: 1.1rem;
+  color: #8B4513;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.7rem 1.2rem;
+  border: 2px solid #8B4513;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+#backLink:hover {
+  background-color: #8B4513;
+  color: #f5e0c3;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+}
+
+#backLink:active {
+  transform: scale(0.95);
+}
+
+#title {
+  position: absolute;
+  top: 5vh;
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #8B4513;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
 }
 
 #counter {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 2em;
+  bottom: 12vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 6rem;
   font-weight: bold;
   color: #5a3e2b;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 10;
 }
 
 #cookie {
@@ -19,15 +64,17 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 200px;
+  width: 30vh;
   cursor: pointer;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  transition: transform 0.05s ease, filter 0.1s ease;
+  border-radius: 50%;
+  clip-path: circle(50%);
 }
 
 #cookie:hover {
-  box-shadow: 0 0 20px rgba(90, 62, 43, 0.4);
+  filter: drop-shadow(0 0 25px rgba(139, 69, 19, 0.5)) brightness(1.08);
 }
 
 #cookie:active {
-  transform: translate(-50%, -50%) scale(0.9);
+  transform: translate(-50%, -50%) scale(0.88);
 }

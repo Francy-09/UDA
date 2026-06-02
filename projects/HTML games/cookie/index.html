@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cookie Clicker</title>
-  <link rel="stylesheet" href="style.html">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="counter">0 🍪</div>
+  <a href="../index.html" id="backLink">← Back to Games</a>
+  <div id="title">🍪 COOKIE CLICKER 🍪</div>
+  <div id="counter">0</div>
   <img id="cookie" src="cookie.png" alt="Cookie">
 
   <script>
@@ -17,7 +19,11 @@
 
     cookie.addEventListener('click', () => {
       count++;
-      counter.textContent = count + ' 🍪';
+      counter.textContent = count;
+      cookie.style.transform = 'translate(-50%, -50%) scale(0.92)';
+      setTimeout(() => {
+        cookie.style.transform = 'translate(-50%, -50%) scale(1)';
+      }, 50);
     });
   </script>
 </body>
